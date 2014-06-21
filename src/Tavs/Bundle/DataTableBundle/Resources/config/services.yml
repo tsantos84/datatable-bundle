@@ -1,0 +1,29 @@
+parameters:
+    datatable.registry.class: Tavs\DataTable\DataTableRegistry
+    datatable.factory.class: Tavs\DataTable\DataTableFactory
+    datatable.column_type.text.class: Tavs\DataTable\Column\TextColumnType
+    datatable.column_type.date_time.class: Tavs\DataTable\Column\DateTimeColumnType
+    datatable.twig_extension.class: Tavs\DataTable\Twig\Extension\DataTableExtension
+
+services:
+    datatable.registry:
+        class: %datatable.registry.class%
+
+    datatable.factory:
+        class: %datatable.factory.class%
+        arguments: [@datatable.registry]
+
+    datatable.column_type.text:
+        class: %datatable.column_type.text.class%
+        tags:
+            - { name: datatable.column_type }
+
+    datatable.column_type.date_time:
+        class: %datatable.column_type.date_time.class%
+        tags:
+            - { name: datatable.column_type }
+
+    datatable.twig_extension:
+        class: %datatable.twig_extension.class%
+        tags:
+            - { name: twig.extension }
