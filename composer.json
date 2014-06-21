@@ -16,6 +16,5 @@
     "autoload":     {
         "psr-0": { "Tavs\\Bundle\\DataTableBundle": "" }
     },
-    "target-dir": "Tavs/Bundle/DataTableBundle",
-    "minimum-stability": "dev"
+    "target-dir": "Tavs/Bundle/DataTableBundle"
 }
