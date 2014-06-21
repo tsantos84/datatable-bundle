@@ -2,7 +2,7 @@
 
 namespace Tavs\Bundle\DataTableBundle;
 
-use Tavs\Bundle\MenuBundle\DependenceInjection\Compiler\AddColumnTypePass;
+use Tavs\Bundle\DataTableBundle\DependenceInjection\Compiler\AddColumnTypePass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

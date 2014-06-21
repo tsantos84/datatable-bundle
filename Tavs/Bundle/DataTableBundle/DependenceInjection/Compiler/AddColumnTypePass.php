@@ -1,6 +1,6 @@
 <?php
 
-namespace Tavs\Bundle\MenuBundle\DependenceInjection\Compiler;
+namespace Tavs\Bundle\DataTableBundle\DependenceInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
