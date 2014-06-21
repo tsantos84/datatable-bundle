@@ -10,7 +10,6 @@
         }
     ],
     "require":      {
-        "tsantos/datatable": "dev-master",
         "symfony/framework-bundle": "~2.5"
     },
     "autoload":     {
