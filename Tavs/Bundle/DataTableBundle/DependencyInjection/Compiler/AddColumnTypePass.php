@@ -23,7 +23,7 @@ class AddColumnTypePass implements CompilerPassInterface
 
         $definition = $container->getDefinition('datatable.registry');
 
-        foreach ($container->findTaggedServiceIds('datatable.column_type') as $id) {
+        foreach ($container->findTaggedServiceIds('datatable.column_type') as $id => $tags) {
             $definition->addMethodCall('addColumnType', [new Reference($id)]);
         }
     }

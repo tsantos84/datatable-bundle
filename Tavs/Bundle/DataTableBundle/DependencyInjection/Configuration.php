@@ -20,7 +20,20 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('tavs_datatable');
+        $rootNode = $treeBuilder->root('data_table');
+
+        $rootNode
+            ->children()
+                ->arrayNode('twig')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('layout')
+                            ->defaultValue('datatable_layout.html.twig')
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+
         return $treeBuilder;
     }
 }

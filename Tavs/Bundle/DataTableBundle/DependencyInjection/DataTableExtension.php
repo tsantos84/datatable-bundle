@@ -26,5 +26,6 @@ class DataTableExtension extends Extension
 
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $container->setParameter('datatable.twig_layout', $config['twig']['layout']);
     }
 }

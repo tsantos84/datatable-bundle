@@ -1,8 +1,10 @@
 parameters:
     datatable.registry.class: Tavs\DataTable\DataTableRegistry
     datatable.factory.class: Tavs\DataTable\DataTableFactory
-    datatable.column_type.text.class: Tavs\DataTable\Column\TextColumnType
-    datatable.column_type.date_time.class: Tavs\DataTable\Column\DateTimeColumnType
+    datatable.column_type.text.class: Tavs\DataTable\ColumnType\TextColumnType
+    datatable.column_type.date_time.class: Tavs\DataTable\ColumnType\DateTimeColumnType
+    datatable.column_type.actions.class: Tavs\Bundle\DataTableBundle\ColumnType\ActionsColumnType
+    datatable.column_type.boolean.class: Tavs\Bundle\DataTableBundle\ColumnType\BooleanColumnType
     datatable.twig_extension.class: Tavs\DataTable\Twig\Extension\DataTableExtension
 
 services:
@@ -23,7 +25,18 @@ services:
         tags:
             - { name: datatable.column_type }
 
+    datatable.column_type.actions:
+        class: %datatable.column_type.actions.class%
+        tags:
+            - { name: datatable.column_type }
+
+    datatable.column_type.boolean:
+        class: %datatable.column_type.boolean.class%
+        tags:
+            - { name: datatable.column_type }
+
     datatable.twig_extension:
         class: %datatable.twig_extension.class%
+        arguments: [%datatable.twig_layout%]
         tags:
             - { name: twig.extension }

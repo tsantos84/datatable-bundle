@@ -1,0 +1,23 @@
+{% extends 'datatable_layout.html.twig' %}
+
+{% block column_actions %}
+    {% spaceless %}
+        {% set identifier = datatable_record_identifier(datatable, record) %}
+        <div class="btn-group">
+            {% block buttons %}
+                {% if edit_route %}
+                    <a href="{{ path(edit_route, identifier) }}" class="btn btn-default btn-sm" title="{{ edit_label }}"><i class="fa fa-edit"></i> {{ edit_label }}</a>
+                {% endif %}
+                {% if remove_route %}
+                    <a href="{{ path(remove_route, identifier) }}" class="btn btn-default btn-sm" title="{{ remove_label }}"><i class="fa fa-trash-o"></i> {{ remove_label }}</a>
+                {% endif %}
+            {% endblock %}
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block column_boolean %}
+    {% spaceless %}
+        <i class="{{ value ? true_class : false_class }}"></i>
+    {% endspaceless %}
+{% endblock %}

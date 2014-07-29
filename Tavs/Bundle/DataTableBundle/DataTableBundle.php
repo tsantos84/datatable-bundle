@@ -2,9 +2,11 @@
 
 namespace Tavs\Bundle\DataTableBundle;
 
-use Tavs\Bundle\DataTableBundle\DependenceInjection\Compiler\AddColumnTypePass;
+use Tavs\Bundle\DataTableBundle\DependencyInjection\Compiler\AddColumnTypePass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Tavs\Bundle\DataTableBundle\DependencyInjection\Compiler\AddDataTableTypePass;
+use Tavs\Bundle\DataTableBundle\DependencyInjection\Compiler\AddTwigResourcePass;
 
 /**
  * Class DataTableBundle
@@ -20,5 +22,7 @@ class DataTableBundle extends Bundle
         parent::build($container);
 
         $container->addCompilerPass(new AddColumnTypePass());
+        $container->addCompilerPass(new AddDataTableTypePass());
+        $container->addCompilerPass(new AddTwigResourcePass());
     }
 }
