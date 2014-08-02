@@ -10,7 +10,8 @@
         }
     ],
     "require":      {
-        "symfony/framework-bundle": "~2.5"
+        "symfony/framework-bundle": "~2.5",
+        "tsantos/datatable" : "dev-master"
     },
     "autoload":     {
         "psr-0": { "Tavs\\Bundle\\DataTableBundle": "" }
