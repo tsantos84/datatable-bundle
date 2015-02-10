@@ -6,10 +6,10 @@
         <div class="btn-group">
             {% block buttons %}
                 {% if edit_route %}
-                    <a href="{{ path(edit_route, identifier) }}" class="btn btn-default btn-sm" title="{{ edit_label }}"><i class="fa fa-edit"></i> {{ edit_label }}</a>
+                    <a href="{{ path(edit_route, identifier) }}" class="{{ edit_class }}" title="{{ edit_label }}"><i class="{{ edit_icon }}"></i> {{ edit_label }}</a>
                 {% endif %}
                 {% if remove_route %}
-                    <a href="{{ path(remove_route, identifier) }}" class="btn btn-default btn-sm" title="{{ remove_label }}"><i class="fa fa-trash-o"></i> {{ remove_label }}</a>
+                    <a href="{{ path(remove_route, identifier) }}" class="{{ remove_class }}" title="{{ remove_label }}"><i class="{{ remove_icon }}"></i> {{ remove_label }}</a>
                 {% endif %}
             {% endblock %}
         </div>

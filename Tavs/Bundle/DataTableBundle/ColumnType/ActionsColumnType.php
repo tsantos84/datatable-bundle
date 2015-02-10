@@ -24,8 +24,12 @@ class ActionsColumnType extends AbstractColumnType
             'title' => 'Ações',
             'edit_label' => '',
             'edit_route' => null,
+            'edit_class' => 'btn btn-default btn-sm',
+            'edit_icon' => 'fa fa-edit',
             'remove_label' => null,
             'remove_route' => null,
+            'remove_class' => 'btn btn-default btn-sm',
+            'remove_icon' => 'fa fa-trash-o',
             'align' => 'center'
         ));
     }
@@ -38,8 +42,12 @@ class ActionsColumnType extends AbstractColumnType
         $view->vars = array_merge($view->vars, array(
             'edit_route' => $options['edit_route'],
             'edit_label' => $options['edit_label'],
+            'edit_class' => $options['edit_class'],
+            'edit_icon' => $options['edit_icon'],
             'remove_route' => $options['remove_route'],
             'remove_label' => $options['remove_label'],
+            'remove_class' => $options['remove_class'],
+            'remove_icon' => $options['remove_icon'],
         ));
     }
 
