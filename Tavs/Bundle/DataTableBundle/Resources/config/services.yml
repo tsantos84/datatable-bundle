@@ -13,7 +13,7 @@ services:
 
     datatable.factory:
         class: %datatable.factory.class%
-        arguments: [@datatable.registry]
+        arguments: ["@datatable.registry"]
 
     datatable.column_type.text:
         class: %datatable.column_type.text.class%
